@@ -1,6 +1,7 @@
 import socket
 
-server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP)
+server_socket = socket.socket(
+    socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP)
 
 address = ('127.0.0.1', 20000)
 
@@ -15,4 +16,3 @@ received_message = connection.recv(buffer_size)
 print("Client says: {}".format(received_message.decode()))
 
 connection.sendall("message received".encode('utf8'))
-
